@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "m1",
+    "included_1m": 1
+  },
+  {
+    "id": 2,
+    "name": "m5",
+    "included_1m": 5
+  },
+  {
+    "id": 3,
+    "name": "m15",
+    "included_1m": 15
+  },
+  {
+    "id": 4,
+    "name": "h1",
+    "included_1m": 60
+  },
+  {
+    "id": 5,
+    "name": "h4",
+    "included_1m": 240
+  },
+  {
+    "id": 1,
+    "name": "D",
+    "included_1m": 1440
+  },
+  {
+    "id": 1,
+    "name": "W",
+    "included_1m": 10080
+  },
+  {
+    "id": 1,
+    "name": "M",
+    "included_1m": null
+  }
+]

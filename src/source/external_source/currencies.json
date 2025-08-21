@@ -1,0 +1,27 @@
+[
+  {
+    "pair_name" : "EURUSD",
+    "base_currency" : "EUR",
+    "quote_currency" : "USD"
+  },
+  {
+    "pair_name" : "XAUUSD",
+    "base_currency" : "XAU",
+    "quote_currency" : "USD"
+  },
+  {
+    "pair_name" : "BTCUSDT",
+    "base_currency" : "BTC",
+    "quote_currency" : "USD"
+  },
+  {
+    "pair_name" : "GBPJPY",
+    "base_currency" : "GBP",
+    "quote_currency" : "JPY"
+  },
+  {
+    "pair_name" : "AUDUSD",
+    "base_currency" : "AUD",
+    "quote_currency" : "USD"
+  }
+]
