@@ -29,7 +29,7 @@ class Candle:
         return f"date-time: {self.datetime} o: {self.open} h: {self.high} l: {self.low} c: {self.close} "
 
     def __repr__(self):
-        return f'open= {self.open} high= {self.high} low= {self.low} close= {self.close}'
+        return f'date-time= {self.datetime} open= {self.open} high= {self.high} low= {self.low} close= {self.close}\n'
 
     def __len__(self):
         return self.high - self.low
