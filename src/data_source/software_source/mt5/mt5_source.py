@@ -1,7 +1,7 @@
 import MetaTrader5 as mt5
-from src.source.software_source.enums import TimeFrameEnum
-from src.source.software_source.exception import MetaTraderIOException
-from src.source.software_source.mt5_result import Mt5Result, LastErrorResult, LastTickResult
+from src.data_source.software_source.mt5.enums import TimeFrameEnum
+from src.data_source.software_source.mt5.exception import MetaTraderIOException
+from src.data_source.software_source.mt5.mt5_result import Mt5Result, LastErrorResult, LastTickResult
 from typing import Callable, TypeVar, ParamSpec
 from functools import wraps
 import datetime as dt
@@ -113,13 +113,3 @@ def get_symbol_current_price(symbol: Symbol) -> Mt5Result[float]:
         result_code=_last_error.result_code,
         result=last_tick_result
     )
-
-
-print(get_symbol_current_price(
-    symbol=Symbol(
-        "EUR",
-        "USD",
-        suffix='b'
-    )
-)
-)
