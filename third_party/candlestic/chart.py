@@ -4,7 +4,7 @@ import csv
 from datetime import datetime
 import pandas as pd
 from third_party.candlestic.candle import Candle
-
+import pandas as pd
 
 @dataclass
 class Chart:
@@ -24,6 +24,17 @@ class Chart:
 
     def add_indicator(self, indicator_name ,indicator):
         self._indicators[indicator_name] = indicator
+
+    def to_dataframe(self):
+
+        data = [(i.datetime, i.open, i.high,i.low, i.close, self.time_frame) for i in self]
+
+        df = pd.DataFrame(
+            data= data,
+            columns=['datetime', 'open','high','low','close', 'time_frame']
+        )
+
+        return df
 
 
     @classmethod

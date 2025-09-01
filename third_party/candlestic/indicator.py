@@ -1,7 +1,7 @@
 from datetime import datetime
 from typing import Callable, Sequence, Tuple
 
-from models.candle import Candle
+from third_party.candlestic.candle import Candle
 
 IndicatorValue = Tuple[datetime, float | None]
 CalculatorMethod = Callable[[Sequence[Candle]],Sequence[IndicatorValue]]
