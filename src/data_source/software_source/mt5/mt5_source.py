@@ -10,6 +10,7 @@ from operator import itemgetter
 
 from third_party.candlestic.chart import Chart
 from third_party.candlestic.symbol import Symbol
+from third_party.candlestic.time_frame import TimeFrame
 
 P = ParamSpec("P")
 T = TypeVar("T")
@@ -52,14 +53,14 @@ def _mt5_initialize(func: Callable[P, Mt5Result[T | None]]) -> Callable[P, Mt5Re
 
 @_mt5_initialize
 def get_market_historical_data(
-        symbol: str,
-        timeframe: TimeFrameEnum,
+        symbol: Symbol,
+        timeframe: TimeFrame,
         date_from: dt.datetime,
         date_to: dt.datetime,
 ) -> Mt5Result[Chart | None]:
     result = mt5.copy_rates_range(
-        symbol,
-        timeframe.value.mt5_value,
+        symbol.symbol_fullname,
+        timeframe.mt5_value,
         date_from,
         date_to,
     )
@@ -83,7 +84,7 @@ def get_market_historical_data(
                 datetime=dt.datetime.fromtimestamp(timestamp(i), dt.UTC),
             ) for i in result
         ],
-        time_frame=timeframe.value.name
+        time_frame=timeframe.name
     )
 
     return Mt5Result(
