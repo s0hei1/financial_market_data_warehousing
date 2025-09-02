@@ -1,7 +1,6 @@
 from enum import Enum
 
-class Events(Enum):
-    ON_FIRST_RUN = "on_first_run"
+class Events:
     ON_START_UP = "on_start_up"
     ON_MINUTE_CHANGED = "on_minute_changed"
     ON_HOUR_CHANGED = "on_hour_changed"

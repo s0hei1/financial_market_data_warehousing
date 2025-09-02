@@ -52,7 +52,7 @@ class DimCandle(Base):
     high : Mapped[float]
     low : Mapped[float]
     close : Mapped[float]
-    date_time : Mapped[datetime] = mapped_column(ForeignKey('dim_date_time.id'))
+    date_time : Mapped[datetime] = mapped_column(ForeignKey('dim_date_time.date_time'))
     symbol_id : Mapped[int] = mapped_column(ForeignKey('symbol.id'))
     time_frame_id : Mapped[int] = mapped_column(ForeignKey('dim_time_frame.id'))
 

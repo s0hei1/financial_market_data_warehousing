@@ -1,9 +1,7 @@
 import datetime as dt
-
 from prefect import task, flow
 import pandas as pd
 import asyncio
-
 from src.etl.etl_exceptions import ETLException
 from third_party.candlestic.chart import Chart
 from third_party.candlestic.symbol import Symbol
@@ -13,7 +11,7 @@ from src.data_source.software_source.mt5 import mt5_source
 
 class DimCandleETL:
 
-    def __init__(self,session :  ):
+    def __init__(self  ):
         pass
 
     @task(name='FactChartETL.extract()', log_prints=True)
