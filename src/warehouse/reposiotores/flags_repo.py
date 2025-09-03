@@ -10,9 +10,9 @@ class FlagsRepo:
 
     async def config_flags(self) -> Flags:
 
-        query_result = await self.session.execute(
-            select(Flags).where(Flags.id == 1)
-        )
+        q = select(Flags).where(Flags.id == 1)
+
+        query_result = await self.session.execute(q)
         result = query_result.scalar_one_or_none()
         if result is not None:
             return result
